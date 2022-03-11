@@ -1,0 +1,28 @@
+HPC
+
+Ex 2.2
+cc = Compiler that we use
+-O3 = optimise to the max we can extend it also with -ffast-math and -mavx2 
+If we change it to -O0 the code is slower than -O3 (it takes longer)
+
+Ex. 2.3
+We See a A Partition Available Jobs info. So time limit for tasks are 30mins and how many CPUS can be used debug CPU = 72 etc. 
+
+Ex. 3
+We need to create the $sbatch script with the generator. 
+Then we can add the batch script to $SCRATCH. 
+Copy the executable to the $SCRATCH.
+The $sbatch script needs to contain the same name at the bottom as the executable. 
+Then we can run sbatch cpi_omp
+And wait until the job is done.
+We then get an output like this „slurm-37078765.out“ and can see what happened.
+The same we can do for cpi_mpi, just change the tasks per node and cpus per task.
+To See the log we can add 
+#SBATCH --error=error.log
+#SBATCH --output=output.log
+To the script file and then we see the both files after adding our jobs
+
+
+
+
+

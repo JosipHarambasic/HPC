@@ -1,0 +1,2 @@
+to run a code we need to use: gcc cpi.c getTime.c 
+If we run only cpi.c then the code will fail

@@ -1,0 +1,4 @@
+The values are different, because the Rank times shows how long it took to
+compute one value of pi. But the other computes how long it took to 
+calculate all the pi values together. So it's much more faster to compute
+the already computed values together than computing each pi value by Integrating it.

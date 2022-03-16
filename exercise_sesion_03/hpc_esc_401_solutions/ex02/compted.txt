@@ -1,0 +1,19 @@
+-O0
+sum=10022429073.341873
+Computed in: 6.343116
+
+-O1
+sum=10022429073.341873
+Computed in: 1.435418
+
+-O2
+sum=10022429073.341873
+Computed in: 1.445504
+
+-O3
+sum=10022429073.341873
+Computed in: 1.446051
+
+-O3 --ffast-math -mavx2
+sum=10022429072.162807
+Computed in: 0.798292

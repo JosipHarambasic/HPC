@@ -1,0 +1,31 @@
+We can see that the optimizations are not always consistent in improving the time. So -O1, -O2, -O3 are almost the same. The next big improvement is the --ffast-math. The compiler optimizes the code by releasing the boundaries for floating point calculation. This means the result is not that exact anymore but much faster and the result is just slighly different. 
+Maybe parallelizing it would make it even faster but I have the issue with Daintwhere I always have the out-off memory error. I don't know why this happens (See error.log)
+
+For the parallelization we need to include the omp.h and instert the #pragma code above the for loop. Or at least after the sum variable. Because we want to parallelize this computation. Else the parallelization may not work.
+
+The plot was not able since I could not solve the memory-problem
+
+-O0
+sum=10022429073.341873
+Computed in: 6.343116
+
+-O1
+sum=10022429073.341873
+Computed in: 1.435418
+
+-O2
+sum=10022429073.341873
+Computed in: 1.445504
+
+-O3
+sum=10022429073.341873
+Computed in: 1.446051
+
+-O3 --ffast-math -mavx2
+sum=10022429072.162807
+Computed in: 0.798292
+
+-O3 -fopenmp 
+sum=10022429072.094175
+Computed in: 1.659304
+

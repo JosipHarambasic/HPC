@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <math.h>
+#include <omp.h>
 #include "getTime.h"
 
 typedef struct {
@@ -17,11 +18,12 @@ int main(int argc, char *argv[]) {
     int i;
     double sum, tStart, tEnd;
     
+    tStart = getTime();
     data = malloc(N * sizeof(coord));
     assert(data);
     
     sum = 0.0;
-    tStart = getTime();
+    #pragma omp parallel for reduction(+ : sum)
     for(i=0; i<N; ++i) {
         data[i].x = i & 31;
         data[i].y = i & 63;

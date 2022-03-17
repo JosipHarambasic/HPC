@@ -29,3 +29,6 @@ Computed in: 0.798292
 sum=10022429072.094175
 Computed in: 1.659304
 
+
+Ex. 2:
+As we see the speedup depends on the amount of CPUS. It varies between higher and lower values but this can just be volatility in the computation. We can see that after 20 cpus the code slowers down. So more is not always better. 

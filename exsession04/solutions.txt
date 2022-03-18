@@ -1,0 +1,29 @@
+For the $Home firectory: "drwx------"
+I only have access permissions all the others are set to -,  
+The $HOME directory from others can't be accessed from my side. This should prevent from voulnerabilties (modification or deleting)
+Default permission for directories is: "drwxr-xr-x"
+Default permission for files is: "-rw-r--r--"
+
+
+The $SCRATCH: "drwxr-xr-x"
+I can access others $SCRATCH directory but only read and execute already writtenfiles, this should prevent from vulnerabilities. (Deleting files or modifiying them)
+Default permission for directories: "drwxr-xr-x"  
+Default permission for files: "-rw-r--r--"
+
+Graded:
+If I want to access /users/jbucko if got the error message: -bash: cd: jbucko/: Keine Berechtigung --> no permission
+So since I can't read it and don't have permission I can't write it also.
+I can check if I have permission with the command ls -ld /users/jbucko 
+and get this permission logged: "drwx------+"
+So I'm unable to see or write anything even if I know there is a file.
+
+The command that allows only the owner full access is: chmod 700
+If I create a file with chmod 000 file.txt, then the file is lost. I can't open or delete it.
+
+
+
+  
+
+
+
+ 

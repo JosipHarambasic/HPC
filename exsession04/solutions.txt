@@ -10,7 +10,7 @@ I can access others $SCRATCH directory but only read and execute already written
 Default permission for directories: "drwxr-xr-x"  
 Default permission for files: "-rw-r--r--"
 
-Graded:
+Graded ex 1:
 If I want to access /users/jbucko if got the error message: -bash: cd: jbucko/: Keine Berechtigung --> no permission
 So since I can't read it and don't have permission I can't write it also.
 I can check if I have permission with the command ls -ld /users/jbucko 
@@ -18,4 +18,11 @@ and get this permission logged: "drwx------+"
 So I'm unable to see or write anything even if I know there is a file.
 
 The command that allows only the owner full access is: chmod 700
-If I create a file with chmod 000 file.txt, then the file is lost. I can't open or delete it. 
+If I create a file with chmod 000 file.txt, then the file is lost. I can't open or delete it.
+
+
+Ex 3: 
+factor does factorize the input number. So if we put factor 20 we get 2 2 5. If add a prime number like 31, we get 31 back. 
+
+
+ 

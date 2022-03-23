@@ -17,7 +17,7 @@ then
 	fi
 end=`date +%s.%N`
 runtime=$(echo "$end - $start" | bc -l)
-echo "$runtime"
+echo "The computation of this number took: 0$runtime seconds"
 else 
 	echo "$1 is not a number."	
 fi

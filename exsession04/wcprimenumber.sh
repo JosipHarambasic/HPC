@@ -6,6 +6,7 @@ then
 	exit
 elif  [[ $1 ]] && [ $1 -eq $1 ];
 then
+	start=`date +%s.%N`
 	factors=$(factor $1 | wc -w)
 
 	if [ $factors -gt 2 ]; 
@@ -14,6 +15,9 @@ then
 	else
 		echo "$1 is prime." 
 	fi
+end=`date +%s.%N`
+runtime=$(echo "$end - $start" | bc -l)
+echo "$runtime"
 else 
 	echo "$1 is not a number."	
 fi

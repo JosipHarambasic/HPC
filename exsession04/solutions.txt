@@ -22,7 +22,11 @@ If I create a file with chmod 000 file.txt, then the file is lost. I can't open 
 
 
 Ex 3: 
-factor does factorize the input number. So if we put factor 20 we get 2 2 5. If add a prime number like 31, we get 31 back. 
+factor does factorize the input number. So if we put factor 20 we get 2 2 5. If add a prime number like 31, we get 31 back.
+
+The time for computing the values is very small for such big numbers.
+Checking if 4572862171001 is prime takes: 0.004394551 seconds.
+And for 4230283 it takes: 0.004214041 seconds 
 
 
  

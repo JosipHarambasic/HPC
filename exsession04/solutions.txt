@@ -18,12 +18,4 @@ and get this permission logged: "drwx------+"
 So I'm unable to see or write anything even if I know there is a file.
 
 The command that allows only the owner full access is: chmod 700
-If I create a file with chmod 000 file.txt, then the file is lost. I can't open or delete it.
-
-
-
-  
-
-
-
- 
+If I create a file with chmod 000 file.txt, then the file is lost. I can't open or delete it. 

@@ -1,0 +1,6 @@
+computing the .c file we can use cc or gcc file.c and we get an executable
+but for .cpp files we need another compiler either CC or g++ and then we get an executable of the .cpp file.
+
+for .c files we can't use new instead of malloc. This will cause an error. In cpp new is passible and works fine.
+
+I just print something to check if the vector addition works.

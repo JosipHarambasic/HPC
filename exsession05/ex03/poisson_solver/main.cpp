@@ -7,6 +7,7 @@ int main (int argc, char *argv[]){
     const char* file_name="params.txt";
 
     // Read the parameter file and store information in a params structure (defined in init.h)
+    // hello
     params p;
     readParameters(file_name, &p);
 

@@ -1,2 +1,2 @@
-Without using Atomic we get errors by counting the 0's,
+With using Atomic we get errors by counting the 0's,
 we get less than the actual amount there is.

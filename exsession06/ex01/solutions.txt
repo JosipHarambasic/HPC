@@ -1,2 +1,1 @@
-With using Atomic we get errors by counting the 0's,
-we get less than the actual amount there is.
+By using atomic and Reduction we get the double amount of 0's.

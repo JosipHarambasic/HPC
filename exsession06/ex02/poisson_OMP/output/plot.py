@@ -36,4 +36,4 @@ fig.colorbar(im1, ax=ax[0])
 fig.colorbar(im2, ax=ax[1])
 
 plt.tight_layout()
-plt.savefig("test.png")
+plt.savefig("params2.png")

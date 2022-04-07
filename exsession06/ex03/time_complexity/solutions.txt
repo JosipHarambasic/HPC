@@ -1,0 +1,6 @@
+the most efficient way to parallelize a nested forloop, is to collapse them
+this distributes the threads to all cores and makes it as fast as possible.
+
+the execution time increases with O(n^2), since we have a double loop it depends on the number
+of particles how much time we take to compute it.
+

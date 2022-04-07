@@ -11,6 +11,7 @@ typedef std::vector<particle> particles;
 
 void forces(particles &plist) {
         int n = plist.size();
+        #pragma omp parallel for num_threads(2) collapse(2)
         for(int i=0; i<n; ++i) { // We want to calculate the force on all particles
                 plist[i].ax = plist[i].ay = plist[i].az = 0; // start with zero acceleration
                 for(int j=0; j<n; ++j) { // Depends on all other particles

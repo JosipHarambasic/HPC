@@ -71,7 +71,7 @@ int main(int argc, char *argv[]){
             num_n0++;
         }
 
-    //loop with reduction
+    // first loop with reduction
 #pragma omp parallel for reduction(max:maxval)
     for (int i=0;i<num_size;i++) if (numbers[i] > maxval) maxval = numbers[i];
     printf("max number in file: %d\n",maxval);

@@ -3,7 +3,7 @@
 
 int main(int argc, char** argv) {
     // Initialize the MPI environment
-    MPI_Init(NULL, NULL);
+    MPI_Init(&argc, &argv);
 
     // Get the number of processes and rank of the process
     int size, my_rank;

@@ -16,7 +16,7 @@ Therefor Non-blocking is in our case faster than the blocking one.
 This exercise is solved in the bonus.c code
 
 ## Exercise 2
-Approx pi computed: 3.14159265
+Approx pi computed: 3.14159265  
 Pi: 3.14159265359...
 
 ## Exercise 3
@@ -29,3 +29,14 @@ My code is not working, so I tried your executable but this also did not work.
 So I was not able to perform the given questions
 
 ## Exercise 5
+The line 21 and 22 which computes sqrt(dx * dx + dy * dy + dz * dz) and (1 / r * r * r) takes the most CPU, since
+divisions with floating points are harder to be calculated. We can see that line 22 is most expensive,
+but 21 not so much. This means that by computing the performance it sums the computation of both
+together. 
+
+#### Learning
+We can see where the code is efficient and where not how we can improve the
+computation and where to take care. So table 2 is in our case the most important,
+but the others are also very nice for other usecases.
+
+

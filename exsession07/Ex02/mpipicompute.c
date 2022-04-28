@@ -28,7 +28,7 @@ int main(int argc, char** argv){
     }
     MPI_Reduce(&sum, &pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
     if (my_rank == 0){
-        printf("approx pi: %f", 4*pi);
+        printf("approx pi: %.8f", 4*pi);
     }
     MPI_Finalize();
 }

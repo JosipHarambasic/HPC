@@ -27,7 +27,7 @@ int mpi_get_domain(int nx, int ny, int my_rank, int size, int* min_x, int* max_x
     int slice = nx/size;
     int remnant = nx % size;
 
-    *min_x = (my_rank < remnant) ? (slice+1)* my_rank : (slice+1)*remnant+slice*(my_rank-remnant);
+    *min_x = (my_rank < remnant) ? (slice+1) * my_rank : (slice+1)*remnant+slice*(my_rank-remnant);
     *max_x = (my_rank < remnant) ? *min_x + slice+1 : *min_x + slice;
 
     printf("in mpi_get_domain() in mpi_module.cpp,  define corners of the local domains\n");

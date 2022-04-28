@@ -50,6 +50,41 @@ int halo_comm(params p, int my_rank, int size, double** u, double* fromLeft, dou
     /* define columns to be sent to right neighbour and to the left neighbour, 
     also receive one both form left and right neighbour*/
 
+    //Vectors to send to left and right
+    double* sendRight = new double [p.ymax - p.ymin];
+    for (int j=0;j<(p.ymax - p.ymin);j++) sendRight[j] = u[p.xmax - p.xmin - 1][j];
+    double* sendLeft = new double [p.ymax - p.ymin];
+    for (int j=0;j<(p.ymax - p.ymin);j++) sendLeft[j] = u[0][j];
+
+    for (int i = 0; i < size*2; ++i) {
+        if (my_rank % 2 == 0){
+            if (i % 2 == 0){
+                if (my_rank != size-1) {
+                    MPI_Ssend(&sendRight, 1, MPI_DOUBLE, my_rank + 1, 1, MPI_COMM_WORLD);
+                }
+                MPI_Ssend(&sendLeft, 1, MPI_DOUBLE, my_rank-1, 1, MPI_COMM_WORLD);
+            } else{
+                if (my_rank != 0){
+                    MPI_Recv(&fromLeft, 1, MPI_DOUBLE, my_rank-1, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+                }
+                MPI_Recv(&fromRight, 1, MPI_DOUBLE, my_rank+1, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+            }
+        } else{
+            if (i % 2 == 0){
+                if (my_rank != size-1) {
+                    MPI_Ssend(&sendRight, 1, MPI_DOUBLE, my_rank + 1, 1, MPI_COMM_WORLD);
+                }
+                MPI_Ssend(&sendLeft, 1, MPI_DOUBLE, my_rank-1, 1, MPI_COMM_WORLD);
+            } else{
+                if (my_rank != 0){
+                    MPI_Recv(&fromLeft, 1, MPI_DOUBLE, my_rank-1, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+                }
+                MPI_Recv(&fromRight, 1, MPI_DOUBLE, my_rank+1, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+            }
+        }
+    }
+
+
     /* choose either to define MPIcolumn_type (lines 43-45) or define 
     the columns to be sent manually (lines 53-56)*/
 

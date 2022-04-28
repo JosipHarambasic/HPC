@@ -56,7 +56,13 @@ void jacobi_step(params p, double** u_new, double** u_old, double** f, int my_ra
             if (j==0 || j==p.ny-1) continue;
             int idx = i-p.xmin;
             int idy = j-p.ymin;
-            u_new[idx][idy] = 0.25*(u_old[idx-1][idy] + u_old[idx+1][idy] + u_old[idx][idy-1] + u_old[idx][idy+1] - dx*dy*f[idx][idy]);
+            if (idx == i-p.xmax-1 && my_rank != size-1){
+                u_new[idx][idy] = 0.25*(u_old[idx-1][idy] + fromRight[idy] + u_old[idx][idy-1] + u_old[idx][idy+1] - dx*dy*f[idx][idy]);
+            } else if (idx == 0 && my_rank != 0){
+                u_new[idx][idy] = 0.25*(fromLeft[idy] + u_old[idx+1][idy] + u_old[idx][idy-1] + u_old[idx][idy+1] - dx*dy*f[idx][idy]);
+            } else{
+                u_new[idx][idy] = 0.25*(u_old[idx-1][idy] + u_old[idx+1][idy] + u_old[idx][idy-1] + u_old[idx][idy+1] - dx*dy*f[idx][idy]);
+            }
         }
     }
     if (p.nx!=p.ny) printf("In function jacobi_step (jacobi.cpp l.26): nx != ny, check jacobi updates\n");

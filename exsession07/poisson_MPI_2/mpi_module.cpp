@@ -56,7 +56,7 @@ int halo_comm(params p, int my_rank, int size, double** u, double* fromLeft, dou
     double* sendLeft = new double [p.ymax - p.ymin];
     for (int j=0;j<(p.ymax - p.ymin);j++) sendLeft[j] = u[0][j];
 
-    for (int i = 0; i < size*2; ++i) {
+    for (int i = 0; i < size*2; i++) {
         if (my_rank % 2 == 0){
             if (i % 2 == 0){
                 if (my_rank != size-1) {

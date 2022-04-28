@@ -42,7 +42,10 @@ int halo_comm(params p, int my_rank, int size, double** u, double* fromLeft, dou
 	/*if you want to implement also cartesian topology, you need fromTop and fromBottom in addition to fromLeft a
 	nd fromRight*/
 
-	for (int j=0;j<(p.ymax - p.ymin);j++) {fromLeft[j] = 0; fromRight[j] = 0;} //initialize fromLeft and fromRight
+	for (int j=0;j<(p.ymax - p.ymin);j++) {
+        fromLeft[j] = 0;
+        fromRight[j] = 0;
+    } //initialize fromLeft and fromRight
 
     /* define columns to be sent to right neighbour and to the left neighbour, 
     also receive one both form left and right neighbour*/

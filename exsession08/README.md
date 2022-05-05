@@ -11,4 +11,4 @@ and run the mpicc and mpirun which worked.
 ```docker push josip97/poisson:latest```
 - [Dockerhub](https://hub.docker.com/repository/docker/josip97/poisson) repo.
 - Run the docker image on the VM works ```docker run josip97/poisson```
-- Since an error occurs for the display we need to use the command 
+- Since an error occurs for the display we need to use the command ``sudo docker run -e DISPLAY=unix$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd)/poisson/output:/poisson/output poisson`` to make the image display

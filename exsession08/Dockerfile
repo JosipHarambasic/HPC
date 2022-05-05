@@ -9,9 +9,9 @@ RUN apt-get update &&  \
         libfreetype6-dev \
 		g++ \
 		make \
-		python3-pip
+		python-pip
 
-RUN	pip3 install \
+RUN	pip install \
         --upgrade pip \
         tk \
 		numpy \

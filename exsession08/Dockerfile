@@ -18,11 +18,11 @@ RUN	pip install \
         matplotlib
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y --no-install-recommends \
-		python3-tk
+		python-tk
 
 COPY ./poisson_serial /poisson_serial
 WORKDIR ./poisson_serial
 RUN make
 CMD ./main && \
 	cd output && \
-	python3 plot.py
+	python plot.py

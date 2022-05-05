@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 
 RUN apt-get update &&  \
     apt upgrade -y && \
-    apt-get install x11-xserver-utils && \
+    apt-get install x11-xserver-utils -y && \
     xhost + && \
 	apt-get install -y -q \
         apt-utils \

@@ -22,6 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -q -y --no-install-recommends
 
 COPY ./poisson_serial /poisson_serial
 WORKDIR ./poisson_serial
+RUN make clean
 RUN make
 CMD ./main && \
 	cd output && \

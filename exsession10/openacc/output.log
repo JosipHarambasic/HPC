@@ -1,0 +1,23 @@
+/var/spool/slurmd/job38512539/slurm_script: line 5: --mail-user=josip.harambasic@uzh.ch: command not found
+PI = 3.141592653589793 computed in 0.1826 seconds
+PI = 3.141592653589793 computed in 0.01421 seconds
+PI = 3.141592653589793 computed in 0.01419 seconds
+PI = 3.141592653589793 computed in 0.01402 seconds
+PI = 3.141592653589793 computed in 0.01399 seconds
+
+
+Batch Job Summary Report (version 21.01.1) for Job "acc" (38512539) on daint
+
+Job information (1/2)
+-----------------------------------------------------------------------------------------------------
+             Submit            Eligible               Start                 End    Elapsed Time limit
+------------------- ------------------- ------------------- ------------------- ---------- ----------
+2022-05-17T22:12:06 2022-05-17T22:12:06 2022-05-17T22:14:04 2022-05-17T22:14:12   00:00:08   00:10:00
+-----------------------------------------------------------------------------------------------------
+
+Job information (2/2)
+-------------------------------------------------------------
+    Username      Account    Partition   NNodes        Energy
+------------ ------------ ------------ -------- -------------
+    jharamba         uzg2       normal        1      0.223 kJ
+

@@ -1,0 +1,17 @@
+#!/bin/bash -l
+#SBATCH --job-name="acc"
+#SBATCH --account=uzg2
+#SBATCH --mail-user=josip.harambasic@uzh.ch
+#SBATCH --time=00:05:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-core=1
+#SBATCH --cpus-per-task=30
+#SBATCH --partition=debug
+#SBATCH --constraint=gpu
+#SBATCH --hint=nomultithread
+
+#SBATCH --ntasks-per-node=1
+#SBATCH --output=out_acc.log
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+srun ./cpi_openacc

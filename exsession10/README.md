@@ -6,7 +6,7 @@ This is because the GPU needs to load the modules and the data. After that it is
 
 ## Exercise 2
 
-
+The computation times are not the same since 
 
 
 

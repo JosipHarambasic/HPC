@@ -15,16 +15,17 @@ void axpy(int n, double alpha, const double *x, double* y) {
 // OpenACC implementation of axpy kernel
 void axpy_gpu(int n, double alpha, const double *x, double* y) {
 
-    int i;
-
     // TODO: offload this loop to the GPU
-    #pragma acc data pcreate(*x[:]) pcopyout(y[:])
-    {
-	#pragma acc parallel loop
+	
+#pragma acc data copy(y[0:n]), copyin(x[0:n])
+	{
+	int i;
+#pragma acc kernels
     	for(i = 0; i < n; ++i) {
         	y[i] += alpha*x[i];
-    }
-    }
+    	}
+	}
+   
 }
 
 // version informations
